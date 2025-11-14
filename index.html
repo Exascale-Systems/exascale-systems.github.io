@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exascale Systems">
+    <title>Exascale Systems</title>
+    <link rel="icon" type="image/png" href="6.png">
+    <style>
+        @font-face {
+            font-family: 'PPValve';
+            src: url('PPValve-PlainMedium.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Geist';
+            src: url('Geist-Thin.otf') format('opentype');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #101010;
+            color: #fff;
+            min-height: 100vh;
+            padding: 0;
+            font-family: 'Geist', sans-serif;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background: #101010;
+            z-index: 100;
+        }
+
+        nav::after {
+            content: '';
+            position: absolute;
+            left: calc(40px + 40px + 40px);
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        nav img {
+            height: 40px;
+            width: auto;
+            padding-right: 20px;
+            margin-right: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        main {
+            flex: 1;
+            padding: 100px 40px 80px 40px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            background: #101010;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 100;
+            z-index: 100;
+        }
+
+        h1 {
+            font-family: 'PPValve', sans-serif;
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: normal;
+            margin-bottom: 80px;
+            letter-spacing: -0.02em;
+            text-align: right;
+            padding-right: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            position: relative;
+        }
+
+        .text-column {
+            font-size: 18px;
+            line-height: 1.4;
+            font-weight: 100;
+            letter-spacing: 0.01em;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+        }
+
+        .text-column p {
+            margin-bottom: 1.5em;
+        }
+
+        .image-column {
+            position: fixed;
+            top: 100px;
+            left: 10px;
+            width: calc(66.67vw - 0px);
+            max-width: 933px;
+            height: calc(100vh - 220px);
+            /* border: 1px solid rgba(255, 255, 255, 0.3); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                padding: 100px 20px 80px 20px;
+            }
+
+            nav, footer {
+                padding: 20px;
+            }
+
+            h1 {
+                margin-bottom: 60px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .image-column {
+                left: 10px;
+                width: calc(66.67vw - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="Icon.png" alt="Exascale Logo">
+    </nav>
+
+    <main>
+        <h1>Exascale</h1>
+        
+        <div class="content">
+            <div></div>
+            <div class="text-column">
+                <p>
+                    Exascale is a research and engineering firm dedicated to the conceptualization, design, and fabrication of custom systems that advance the most ambitious scientific projects. 
+We provide capabilities across the full design cycle, from rigorous first-principles modeling to prototype fabrication and system integration.
+                <p>
+                    Our domain expertise is primarily within advanced manufacturing, materials metrology, and optical system development.
+                </p>
+            </div>
+        </div>
+        
+        <div class="image-column">
+            <img src="Cz.JPG" alt="Exascale">
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; MMXXV</div>
+        <div>Cambridge, MA // San Francisco, CA</div>
+    </footer>
+</body>
+</html>

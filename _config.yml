@@ -1,0 +1,22 @@
+# Jekyll configuration for GitHub Pages
+title: Exascale Systems
+description: Advanced computing solutions and research
+url: "https://exascale-systems.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# GitHub Pages specific
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
