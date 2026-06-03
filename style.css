@@ -203,43 +203,128 @@ h1 {
 }
 
 @media (max-width: 900px) {
-    main {
-        padding: 100px 20px 80px 20px;
-    }
-
-    nav, footer {
-        padding: 20px;
-    }
-
     nav {
-        flex-wrap: wrap;
-        gap: 12px;
+        padding: 12px 16px;
+        gap: 0;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    nav::after {
+        display: none;
+    }
+
+    nav img {
+        height: 28px;
+        padding-right: 16px;
+        margin-right: 0;
     }
 
     .nav-links {
-        margin-left: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 13px;
-        flex-wrap: wrap;
-        align-self: auto;
+        margin: -12px 0 -12px auto;
+        align-self: stretch;
+        width: auto;
+        font-size: 12px;
+        letter-spacing: 0.01em;
     }
 
     .nav-links a {
-        padding: 8px 12px;
+        flex: 0 0 auto;
+        padding: 0 12px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 90px 18px 90px 18px;
     }
 
     h1 {
-        margin-bottom: 60px;
-    }
-
-    .content {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        order: 0;
+        font-size: clamp(2.75rem, 13vw, 5rem);
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 28px;
+        word-break: break-word;
     }
 
     .image-column {
-        left: 10px;
-        width: calc(66.67vw - 10px);
+        order: 1;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        max-width: none;
+        height: 240px;
+        margin-bottom: 32px;
+        pointer-events: auto;
+    }
+
+    .image-column img {
+        opacity: 0.9;
+    }
+
+    .content {
+        order: 2;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .content > div:first-child {
+        display: none;
+    }
+
+    .text-column {
+        font-size: 16px;
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 12px 14px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 18px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 420px) {
+    nav {
+        padding: 10px 12px;
+    }
+
+    nav img {
+        height: 24px;
+        padding-right: 10px;
+    }
+
+    .nav-links {
+        font-size: 11px;
+        margin: -10px 0 -10px auto;
+    }
+
+    .nav-links a {
+        padding: 0 8px;
+    }
+
+    main {
+        padding-top: 76px;
+    }
+
+    h1 {
+        font-size: clamp(2.25rem, 12vw, 3.5rem);
+    }
+
+    .image-column {
+        height: 180px;
     }
 }
